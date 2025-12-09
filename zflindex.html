@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI导航 · 极简高效</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card: rgba(255,255,255,0.7);
+      --text: #1e293b;
+      --primary: #6366f1;
+      --border: rgba(0,0,0,0.08);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f172a;
+        --card: rgba(15,23,42,0.6);
+        --text: #e2e8f0;
+        --border: rgba(255,255,255,0.1);
+      }
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(99,102,241,0.1) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(139,92,246,0.1) 0%, transparent 20%);
+      padding: 2rem 1rem;
+    }
+    .container { max-width: 1280px; margin: 0 auto; }
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+      padding: 2rem 0;
+    }
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      background: linear-gradient(90deg, #6366f1, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.5rem;
+    }
+    .desc { font-size: 1.1rem; opacity: 0.7; }
+
+    .categories {
+      display: grid;
+      gap: 2rem;
+    }
+    .category {
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 1.5rem;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+    }
+    .category:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+    .cat-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.2rem;
+      cursor: pointer;
+    }
+    .cat-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+    .item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem;
+      background: rgba(255,255,255,0.5);
+      border-radius: 14px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    @media (prefers-color-scheme: dark) {
+      .item { background: rgba(255,255,255,0.08); }
+    }
+    .item:hover {
+      transform: scale(1.03);
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 10px 25px rgba(99,102,241,0.3);
+    }
+    .item:hover img { transform: scale(1.15); }
+    .item img {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      flex-shrink: 0;
+      object-fit: cover;
+    }
+    .item-text h3 { font-size: 1.1rem; font-weight: 600; }
+    .item-text p { font-size: 0.9rem; opacity: 0.7; margin-top: 0.2rem; }
+    .badge {
+      background: var(--primary);
+      color: white;
+      font-size: 0.75rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 50rem;
+      margin-left: auto;
+    }
+    footer {
+      text-align: center;
+      margin-top: 4rem;
+      padding: 2rem 0;
+      opacity: 0.6;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>AI 导航站</h1>
+      <p class="desc">常用 AI 工具 · 搜索引擎 · 云服务 · 流媒体，一站直达</p>
+    </header>
+
+    <div class="categories">
+
+      <div class="category">
+        <div class="cat-header">
+          <div class="cat-title">
+            <i class="ri-sparkling-2-fill" style="color:#8b5cf6;"></i>
+            AI 集合（常用）
+          </div>
+          <span class="badge">推荐</span>
+        </div>
+        <div class="grid">
+          <a href="https://chat.deepseek.com/" class="item" target="_blank">
+            <img src="https://www.google.com/s2/favicons?domain=chat.deepseek.com&sz=64" alt="DeepSeek">
+            <div class="item-text">
+              <h3>DeepSeek Chat</h3>
+              <p>国产顶尖大模型</p>
+            </div>
+          </a>
+          <a href="https://gemini.google.com/" class="item" target="_blank">
+            <img src="https://www.google.com/s2/favicons?domain=gemini.google.com&sz=64" alt="Gemini">
+            <div class="item-text">
+              <h3>Gemini</h3>
+              <p>Google 最新多模态 AI</p>
+            </div>
+          </a>
+          <a href="https://grok.com/" class="item" target="_blank">
+            <img src="https://grok.com/favicon.ico" alt="Grok">
+            <div class="item-text">
+              <h3>Grok 4</h3>
+              <p>xAI 出品，真实且幽默</p>
+            </div>
+          </a>
+          <a href="https://chatgpt.com/" class="item" target="_blank">
+            <img src="https://chatgpt.com/favicon.ico" alt="ChatGPT">
+            <div class="item-text">
+              <h3>ChatGPT</h3>
+              <p>OpenAI 旗舰产品</p>
+            </div>
+          </a>
+          <a href="https://www.qianwen.com/" class="item" target="_blank">
+            <div style="width: 40px; height: 40px; border-radius: 10px; background: #6366f1; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <i class="ri-chat-1-line" style="font-size: 24px; color: white;"></i>
+            </div>
+            <div class="item-text">
+              <h3>通义千问</h3>
+              <p>阿里云大模型</p>
+            </div>
+          </a>
+          <a href="https://yuanbao.tencent.com/" class="item" target="_blank">
+            <img src="https://www.google.com/s2/favicons?domain=yuanbao.tencent.com&sz=64" alt="元宝">
+            <div class="item-text">
+              <h3>腾讯元宝</h3>
+              <p>腾讯出品 AI 助手</p>
+            </div>
+          </a>
+          <a href="https://siliconflow.cn/" class="item" target="_blank">
+            <img src="https://siliconflow.cn/favicon.ico" alt="SiliconFlow">
+            <div class="item-text">
+              <h3>SiliconFlow</h3>
+              <p>国产推理平台</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="category">
+        <div class="cat-header">
+          <div class="cat-title">
+            <i class="ri-search-eye-line" style="color:#f59e0b;"></i>
+            搜索引擎
+          </div>
+        </div>
+        <div class="grid">
+          <a href="https://www.baidu.com/" class="item" target="_blank">
+            <img src="https://www.baidu.com/favicon.ico" alt="百度">
+            <div class="item-text"><h3>百度</h3></div>
+          </a>
+          <a href="https://www.google.com/" class="item" target="_blank">
+            <img src="https://www.google.com/favicon.ico" alt="Google">
+            <div class="item-text"><h3>Google</h3></div>
+          </a>
+          <a href="https://www.bing.com/" class="item" target="_blank">
+            <img src="https://www.bing.com/favicon.ico" alt="Bing">
+            <div class="item-text"><h3>Bing</h3></div>
+          </a>
+          <a href="https://github.com/dashboard" class="item" target="_blank">
+            <img src="https://github.com/favicon.ico" alt="GitHub">
+            <div class="item-text"><h3>GitHub</h3><p>代码人的“搜索引擎”</p></div>
+          </a>
+        </div>
+      </div>
+
+      <div class="category">
+        <div class="cat-header">
+          <div class="cat-title">
+            <i class="ri-movie-2-line" style="color:#ef4444;"></i>
+            流媒体
+          </div>
+        </div>
+        <div class="grid">
+          <a href="https://www.youtube.com/" class="item" target="_blank">
+            <img src="https://www.youtube.com/favicon.ico" alt="YouTube">
+            <div class="item-text"><h3>YouTube</h3></div>
+          </a>
+          <a href="https://www.bilibili.com/" class="item" target="_blank">
+            <img src="https://www.bilibili.com/favicon.ico" alt="bilibili">
+            <div class="item-text"><h3>bilibili</h3><p>哔哩哔哩</p></div>
+          </a>
+          <a href="https://www.douyin.com/" class="item" target="_blank">
+            <img src="https://www.douyin.com/favicon.ico" alt="抖音">
+            <div class="item-text"><h3>抖音</h3></div>
+          </a>
+          <a href="https://www.tiktok.com/explore" class="item" target="_blank">
+            <img src="https://www.tiktok.com/favicon.ico" alt="TikTok">
+            <div class="item-text"><h3>TikTok</h3></div>
+          </a>
+        </div>
+      </div>
+
+      <div class="category">
+        <div class="cat-header">
+          <div class="cat-title">
+            <i class="ri-cloud-line" style="color:#06b6d4;"></i>
+            Cloud 云服务
+          </div>
+        </div>
+        <div class="grid">
+          <a href="https://www.aliyun.com/" class="item" target="_blank">
+            <img src="https://www.aliyun.com/favicon.ico" alt="阿里云">
+            <div class="item-text"><h3>阿里云</h3></div>
+          </a>
+          <a href="https://www.tencentcloud.com/zh" class="item" target="_blank">
+            <img src="https://www.tencentcloud.com/favicon.ico" alt="腾讯云">
+            <div class="item-text"><h3>腾讯云</h3></div>
+          </a>
+          <a href="https://www.oracle.com/cloud/" class="item" target="_blank">
+            <img src="https://www.oracle.com/favicon.ico" alt="Oracle Cloud">
+            <div class="item-text"><h3>Oracle Cloud</h3></div>
+          </a>
+          <a href="https://cloud.google.com/" class="item" target="_blank">
+            <img src="https://cloud.google.com/favicon.ico" alt="Google Cloud">
+            <div class="item-text"><h3>Google Cloud</h3></div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <footer>
+      <p>Made with ❤ & Grok • 随时星标此页面，效率起飞</p>
+    </footer>
+  </div>
+</body>
+</html>
