@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI导航 · 极简高效</title>
+  <title>AI Start Pages · CherryLoong</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
   <style>
     :root {
@@ -30,13 +30,13 @@
       background-image: 
         radial-gradient(circle at 10% 20%, rgba(99,102,241,0.1) 0%, transparent 20%),
         radial-gradient(circle at 90% 80%, rgba(139,92,246,0.1) 0%, transparent 20%);
-      padding: 2rem 1rem;
+      padding: 1rem 1rem 2rem 1rem;
     }
     .container { max-width: 1280px; margin: 0 auto; }
     header {
       text-align: center;
-      margin-bottom: 3rem;
-      padding: 2rem 0;
+      margin-bottom: 2rem;
+      padding: 1rem 0;
     }
     h1 {
       font-size: 2.8rem;
@@ -44,9 +44,13 @@
       background: linear-gradient(90deg, #6366f1, #8b5cf6);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.3rem;
     }
-    .desc { font-size: 1.1rem; opacity: 0.7; }
+    .desc { 
+      font-size: 1.1rem; 
+      opacity: 0.7;
+      margin-top: 0.3rem;
+    }
 
     .categories {
       display: grid;
@@ -81,6 +85,21 @@
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 1rem;
+      transition: all 0.3s ease;
+    }
+    .collapsible-content {
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .collapsed .collapsible-content {
+      max-height: 0;
+      margin-bottom: -1.2rem;
+    }
+    .toggle-icon {
+      transition: transform 0.3s ease;
+    }
+    .collapsed .toggle-icon {
+      transform: rotate(-90deg);
     }
     .item {
       display: flex;
@@ -124,7 +143,7 @@
     }
     footer {
       text-align: center;
-      margin-top: 4rem;
+      margin-top: 3rem;
       padding: 2rem 0;
       opacity: 0.6;
       font-size: 0.9rem;
@@ -134,7 +153,7 @@
 <body>
   <div class="container">
     <header>
-      <h1>AI 导航站</h1>
+      <h1>AI Start</h1>
       <p class="desc">常用 AI 工具 · 搜索引擎 · 云服务 · 流媒体，一站直达</p>
     </header>
 
@@ -178,9 +197,7 @@
             </div>
           </a>
           <a href="https://www.qianwen.com/" class="item" target="_blank">
-            <div style="width: 40px; height: 40px; border-radius: 10px; background: #6366f1; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                <i class="ri-chat-1-line" style="font-size: 24px; color: white;"></i>
-            </div>
+            <img src="https://img.alicdn.com/imgextra/i4/O1CN01Slt9qq1Q0CmLAG9MK_!!6000000001913-55-tps-32-32.svg" alt="通义千问">
             <div class="item-text">
               <h3>通义千问</h3>
               <p>阿里云大模型</p>
@@ -193,11 +210,11 @@
               <p>腾讯出品 AI 助手</p>
             </div>
           </a>
-          <a href="https://siliconflow.cn/" class="item" target="_blank">
-            <img src="https://siliconflow.cn/favicon.ico" alt="SiliconFlow">
+          <a href="https://www.doubao.com/chat/" class="item" target="_blank">
+            <img src="https://www.google.com/s2/favicons?domain=www.doubao.com&sz=64" alt="豆包">
             <div class="item-text">
-              <h3>SiliconFlow</h3>
-              <p>国产推理平台</p>
+              <h3>豆包</h3>
+              <p>字节跳动AI助手</p>
             </div>
           </a>
         </div>
@@ -206,45 +223,34 @@
       <div class="category">
         <div class="cat-header">
           <div class="cat-title">
-            <i class="ri-search-eye-line" style="color:#f59e0b;"></i>
-            搜索引擎
+            <i class="ri-globe-line" style="color:#10b981;"></i>
+            网络信息平台
           </div>
         </div>
         <div class="grid">
-          <a href="https://www.baidu.com/" class="item" target="_blank">
-            <img src="https://www.baidu.com/favicon.ico" alt="百度">
-            <div class="item-text"><h3>百度</h3></div>
-          </a>
           <a href="https://www.google.com/" class="item" target="_blank">
             <img src="https://www.google.com/favicon.ico" alt="Google">
             <div class="item-text"><h3>Google</h3></div>
           </a>
-          <a href="https://www.bing.com/" class="item" target="_blank">
-            <img src="https://www.bing.com/favicon.ico" alt="Bing">
-            <div class="item-text"><h3>Bing</h3></div>
+          <a href="https://www.bilibili.com/" class="item" target="_blank">
+            <img src="https://www.bilibili.com/favicon.ico" alt="bilibili">
+            <div class="item-text"><h3>bilibili</h3><p>哔哩哔哩</p></div>
           </a>
-          <a href="https://github.com/dashboard" class="item" target="_blank">
-            <img src="https://github.com/favicon.ico" alt="GitHub">
-            <div class="item-text"><h3>GitHub</h3><p>代码人的“搜索引擎”</p></div>
-          </a>
-        </div>
-      </div>
-
-      <div class="category">
-        <div class="cat-header">
-          <div class="cat-title">
-            <i class="ri-movie-2-line" style="color:#ef4444;"></i>
-            流媒体
-          </div>
-        </div>
-        <div class="grid">
           <a href="https://www.youtube.com/" class="item" target="_blank">
             <img src="https://www.youtube.com/favicon.ico" alt="YouTube">
             <div class="item-text"><h3>YouTube</h3></div>
           </a>
-          <a href="https://www.bilibili.com/" class="item" target="_blank">
-            <img src="https://www.bilibili.com/favicon.ico" alt="bilibili">
-            <div class="item-text"><h3>bilibili</h3><p>哔哩哔哩</p></div>
+          <a href="https://github.com/dashboard" class="item" target="_blank">
+            <img src="https://github.com/favicon.ico" alt="GitHub">
+            <div class="item-text"><h3>GitHub</h3><p>代码人的"搜索引擎"</p></div>
+          </a>
+          <a href="https://www.baidu.com/" class="item" target="_blank">
+            <img src="https://www.baidu.com/favicon.ico" alt="百度">
+            <div class="item-text"><h3>百度</h3></div>
+          </a>
+          <a href="https://www.bing.com/" class="item" target="_blank">
+            <img src="https://www.bing.com/favicon.ico" alt="Bing">
+            <div class="item-text"><h3>Bing</h3></div>
           </a>
           <a href="https://www.douyin.com/" class="item" target="_blank">
             <img src="https://www.douyin.com/favicon.ico" alt="抖音">
@@ -257,30 +263,69 @@
         </div>
       </div>
 
-      <div class="category">
-        <div class="cat-header">
+      <div class="category collapsed" id="cloudCategory">
+        <div class="cat-header" id="cloudHeader">
           <div class="cat-title">
-            <i class="ri-cloud-line" style="color:#06b6d4;"></i>
+            <i class="ri-cloud-line toggle-icon" style="color:#06b6d4;"></i>
             Cloud 云服务
           </div>
         </div>
-        <div class="grid">
-          <a href="https://www.aliyun.com/" class="item" target="_blank">
-            <img src="https://img.alicdn.com/tfs/TB1_ZXuNcfpK1RjSZFOXXa6nFXa-32-32.ico" alt="阿里云">
-            <div class="item-text"><h3>阿里云</h3></div>
-          </a>
-          <a href="https://www.tencentcloud.com/zh" class="item" target="_blank">
-            <img src="https://www.tencentcloud.com/favicon.ico" alt="腾讯云">
-            <div class="item-text"><h3>腾讯云</h3></div>
-          </a>
-          <a href="https://www.oracle.com/cloud/" class="item" target="_blank">
-            <img src="https://www.oracle.com/favicon.ico" alt="Oracle Cloud">
-            <div class="item-text"><h3>Oracle Cloud</h3></div>
-          </a>
-          <a href="https://cloud.google.com/" class="item" target="_blank">
-            <img src="https://cloud.google.com/favicon.ico" alt="Google Cloud">
-            <div class="item-text"><h3>Google Cloud</h3></div>
-          </a>
+        <div class="collapsible-content">
+          <div class="grid">
+            <a href="https://www.aliyun.com/" class="item" target="_blank">
+              <img src="https://img.alicdn.com/tfs/TB1_ZXuNcfpK1RjSZFOXXa6nFXa-32-32.ico" alt="阿里云">
+              <div class="item-text"><h3>阿里云</h3></div>
+            </a>
+            <a href="https://www.tencentcloud.com/zh" class="item" target="_blank">
+              <img src="https://www.tencentcloud.com/favicon.ico" alt="腾讯云">
+              <div class="item-text"><h3>腾讯云</h3></div>
+            </a>
+            <a href="https://www.oracle.com/cloud/" class="item" target="_blank">
+              <img src="https://www.oracle.com/favicon.ico" alt="Oracle Cloud">
+              <div class="item-text"><h3>Oracle Cloud</h3></div>
+            </a>
+            <a href="https://cloud.google.com/" class="item" target="_blank">
+              <img src="https://cloud.google.com/favicon.ico" alt="Google Cloud">
+              <div class="item-text"><h3>Google Cloud</h3></div>
+            </a>
+            <a href="https://platform.deepseek.com/usage" class="item" target="_blank">
+              <img src="https://www.google.com/s2/favicons?domain=platform.deepseek.com&sz=64" alt="DeepSeek">
+              <div class="item-text">
+                <h3>DeepSeek用量</h3>
+                <p>查看API使用情况</p>
+              </div>
+            </a>
+            <a href="https://www.volcengine.com/" class="item" target="_blank">
+              <img src="https://www.google.com/s2/favicons?domain=www.volcengine.com&sz=64" alt="火山引擎">
+              <div class="item-text">
+                <h3>火山引擎</h3>
+                <p>字节跳动云服务</p>
+              </div>
+            </a>
+            <a href="https://bailian.console.aliyun.com/?spm=5176.29619931.J_C-NDPSQ8SFKWB4aef8i6I.1.74cd10d7k2jV7f&tab=model#/model-market/all" class="item" target="_blank">
+              <div style="width: 40px; height: 40px; border-radius: 10px; background: #ff6a00; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <i class="ri-cloud-line" style="font-size: 24px; color: white;"></i>
+              </div>
+              <div class="item-text">
+                <h3>阿里百炼</h3>
+                <p>阿里云模型市场</p>
+              </div>
+            </a>
+            <a href="https://open.cherryin.ai/pricing" class="item" target="_blank">
+              <img src="https://www.google.com/s2/favicons?domain=open.cherryin.ai&sz=64" alt="Cherry AI">
+              <div class="item-text">
+                <h3>Cherry AI</h3>
+                <p>定价页面</p>
+              </div>
+            </a>
+            <a href="https://siliconflow.cn/" class="item" target="_blank">
+              <img src="https://siliconflow.cn/favicon.ico" alt="SiliconFlow">
+              <div class="item-text">
+                <h3>SiliconFlow</h3>
+                <p>国产推理平台</p>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
 
@@ -290,7 +335,15 @@
       <p>Made with ❤ & Grok • 随时星标此页面，效率起飞</p>
     </footer>
   </div>
+
+  <script>
+    // 为Cloud云服务类别添加折叠功能
+    const cloudHeader = document.getElementById('cloudHeader');
+    const cloudCategory = document.getElementById('cloudCategory');
+    
+    cloudHeader.addEventListener('click', () => {
+      cloudCategory.classList.toggle('collapsed');
+    });
+  </script>
 </body>
 </html>
-
-
