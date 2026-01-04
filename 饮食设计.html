@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>每周波动 · 猎人之路</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', 'Roboto', sans-serif;
+            /* 纯渐变背景，无图片 */
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+            color: #e2e8f0;
+            line-height: 1.8;
+            padding: 2rem 0;
+            min-height: 100vh;
+        }
+        .timeline {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+        .today-section {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 4rem;
+            overflow-x: auto;
+            padding: 0 1rem;
+        }
+        .other-days {
+            display: flex;
+            gap: 2rem;
+            overflow-x: auto;
+            padding: 0 1rem 2rem;
+            scroll-snap-type: x mandatory;
+        }
+        .other-days::-webkit-scrollbar {
+            height: 8px;
+        }
+        .other-days::-webkit-scrollbar-thumb {
+            background: #475569;
+            border-radius: 4px;
+        }
+        .day-card {
+            flex: 0 0 340px;
+            background: rgba(15,23,42,0.85);
+            backdrop-filter: blur(12px);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            scroll-snap-align: center;
+            border: 1px solid #334155;
+        }
+        .day-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 50px rgba(0,191,255,0.25);
+        }
+        .day-card.today {
+            flex: 0 0 380px;
+            background: rgba(15,35,55,0.9);
+            box-shadow: 0 20px 50px rgba(0,191,255,0.35);
+            border: 1px solid #00bfff;
+        }
+        .day-card.today::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 6px;
+            background: linear-gradient(to right, #00bfff, #00ffea);
+            border-radius: 16px 16px 0 0;
+        }
+        .day-card.today .day-title {
+            font-size: 2.3rem;
+            font-weight: bold;
+            color: #00ffea;
+            text-shadow: 0 0 12px rgba(0,255,234,0.4);
+        }
+        .day-card.today .day-content p {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #e2e8f0;
+        }
+        .day-img {
+            height: 240px;
+            background: center/cover no-repeat;
+            opacity: 0.85;
+            transition: opacity 0.3s;
+        }
+        .day-card:hover .day-img {
+            opacity: 1;
+        }
+        .day-content {
+            padding: 2rem;
+            text-align: center;
+        }
+        .day-title {
+            font-size: 1.8rem;
+            margin: 0.5rem 0;
+            color: #94a3b8;
+        }
+        .remark {
+            font-style: normal;
+            color: #cbd5e1;
+            font-size: 1.05rem;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="timeline">
+        <!-- 今天置顶（横向居中） -->
+        <div class="today-section" id="today-section"></div>
+
+        <!-- 其他日子横向滚动 -->
+        <div class="other-days" id="other-days"></div>
+    </section>
+
+    <template id="day-template">
+        <div class="day-card">
+            <div class="day-img"></div>
+            <div class="day-content">
+                <h3 class="day-title"></h3>
+                <p class="mode"></p>
+                <p class="remark"></p>
+            </div>
+        </div>
+    </template>
+
+    <script>
+        const weekData = [
+            { day: '周一', mode: 'OMAD（傍晚一餐）', remark: '严格限制碳水，让消化系统深度休息，触发细胞自噬<br>例：鸡蛋汤（香菇版）+ 清炒时蔬', img: 'https://bioculturalevolution.net/wp-content/uploads/2017/03/good-h-g-eats.jpg' },
+            { day: '周二', mode: '16:8（午、晚两餐）', remark: '少量碳水，正常日子，模拟狩猎<br>例：回归基础，食材家常，烹饪简单', img: 'https://media.gettyimages.com/id/815688356/photo/australian-natives-preparing-meal-from-animal-they-have-hunted.jpg?s=594x594&w=gi&k=20&c=9Xf7O_DgsFCLgtggpSXMt0KsSyEirDIZrGiulST2jI8=' },
+            { day: '周三', mode: '高碳压力日（午、晚两餐）', remark: '素食日（东正教风格斋戒）- 形成蛋白缺乏压力<br>例：蔬菜、豆类、面食、土豆、红薯（无动物产品）', img: 'https://www.shutterstock.com/image-vector/bushmen-excellent-hunters-their-bows-260nw-2187905725.jpg' },
+            { day: '周四', mode: '优质脂肪日（午、晚两餐）', remark: '无早餐，严格限制碳水，模拟狩猎<br>例：鱼类+鱼油+炒菜+米饭', img: 'https://www.shutterstock.com/image-vector/age-huntergatherer-paleolithic-humans-working-600nw-2694621285.jpg' },
+            { day: '周五', mode: 'OMAD（傍晚一餐）', remark: '形成“饥-饱”强烈节律<br>例：鸡腿、鸡块、排骨（丰盛肉食+碳水）', img: 'https://media.istockphoto.com/id/1194512891/photo/neanderthal-or-homo-sapiens-family-cooking-animal-meat-over-bonfire-and-then-eating-it-tribe.jpg?s=612x612&w=0&k=20&c=ZeS2LzP0bWQXiEW7VzY3Sop_vJdT48xZ7B_pFn-ewfs=' },
+            { day: '周六', mode: '随身体感觉', remark: '波动补偿、午晚两餐<br>彻底放纵：红酒、面包、意大利面、甜点', img: 'https://media.istockphoto.com/id/1194512891/photo/neanderthal-or-homo-sapiens-family-cooking-animal-meat-over-bonfire-and-then-eating-it-tribe.jpg?s=612x612&w=0&k=20&c=ZeS2LzP0bWQXiEW7VzY3Sop_vJdT48xZ7B_pFn-ewfs=' },
+            { day: '周日', mode: '随身体感觉', remark: '一餐或两餐，自然食物<br>听从身体，它比所有研究都聪明', img: 'https://images.saymedia-content.com/.image/t_share/MTc2NDU2Njk1ODEwNDM0MjYx/hunter-gatherers.jpg' }
+        ];
+
+        const daysOrder = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
+        const todayName = daysOrder[new Date().getDay()];
+
+        const todaySection = document.getElementById('today-section');
+        const otherSection = document.getElementById('other-days');
+        const template = document.getElementById('day-template').content;
+
+        weekData.forEach(item => {
+            const card = template.cloneNode(true);
+            card.querySelector('.day-img').style.backgroundImage = `url('${item.img}')`;
+            const title = card.querySelector('.day-title');
+            title.textContent = item.day;
+            card.querySelector('.mode').innerHTML = item.mode;
+            card.querySelector('.remark').innerHTML = item.remark;
+
+            if (item.day === todayName) {
+                card.querySelector('.day-card').classList.add('today');
+                title.textContent += ' · 今天';
+                todaySection.appendChild(card);
+            } else {
+                otherSection.appendChild(card);
+            }
+        });
+    </script>
+</body>
+</html>
