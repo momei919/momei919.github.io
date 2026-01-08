@@ -1,0 +1,166 @@
+{
+  "search": {
+    "engines": [
+      { "name": "Google", "url": "https://www.google.com/search?q=", "param": "q" },
+      { "name": "百度一下", "url": "https://www.baidu.com/s?wd=", "param": "wd" },
+      { "name": "Bing", "url": "https://www.bing.com/search?q=", "param": "q" }
+    ],
+    "quickLinks": [
+      {
+        "title": "Gmail",
+        "url": "https://mail.google.com/",
+        "icon": "https://img.icons8.com/fluency/48/gmail-new.png"
+      },
+      {
+        "title": "QQ邮箱",
+        "url": "https://mail.qq.com/",
+        "icon": "https://mail.qq.com/favicon.ico"
+      },
+      {
+        "title": "饮食计划",
+        "url": "diet.html",
+        "icon": "https://github.com/zfloong/zfloong.github.io/raw/main/芝士.svg"
+      }
+    ]
+  },
+  "categories": [
+    {
+      "id": "ai",
+      "navTitle": "Everyday",
+      "icon": "ri-sparkling-2-fill",
+      "sectionTitle": "AI Honey",
+      "titleColor": "#8b5cf6",
+      "items": [
+        { "title": "Gemini", "url": "https://gemini.google.com/", "icon": "https://www.google.com/s2/favicons?domain=gemini.google.com&sz=64" },
+        { "title": "Google AI Studio", "url": "https://aistudio.google.com/prompts/new_chat?model=gemini-3-pro-preview", "icon": "https://www.google.com/s2/favicons?domain=aistudio.google.com&sz=64" },
+        { "title": "HuggingChat", "url": "https://huggingface.co/chat/models", "icon": "https://www.google.com/s2/favicons?domain=huggingface.co&sz=64" },
+        { "title": "GitHub Copilot", "url": "https://github.com/copilot", "icon": "https://www.google.com/s2/favicons?domain=github.com&sz=64" },
+        { "title": "Grok X", "url": "https://x.com/i/grok", "icon": "https://x.com/favicon.ico" },
+        { "title": "通义千问", "url": "https://www.qianwen.com/", "icon": "https://img.alicdn.com/imgextra/i4/O1CN01Slt9qq1Q0CmLAG9MK_!!6000000001913-55-tps-32-32.svg" },
+        { "title": "DeepSeek", "url": "https://chat.deepseek.com/", "icon": "https://www.google.com/s2/favicons?domain=chat.deepseek.com&sz=64" },
+        { "title": "LM Arena", "url": "https://lmarena.ai/zh", "icon": "https://www.google.com/s2/favicons?domain=lmarena.ai&sz=64" },
+        { "title": "Claude", "url": "https://claude.ai/", "icon": "https://www.google.com/s2/favicons?domain=claude.ai&sz=64" },
+        { "title": "Copilot", "url": "https://copilot.microsoft.com/", "icon": "https://copilot.microsoft.com/favicon.ico" },
+        { "title": "腾讯元宝", "url": "https://yuanbao.tencent.com/", "icon": "https://www.google.com/s2/favicons?domain=yuanbao.tencent.com&sz=64" },
+        { "title": "文心一言", "url": "https://yiyan.baidu.com/", "icon": "https://www.google.com/s2/favicons?domain=yiyan.baidu.com&sz=64" },
+        { "title": "GitHub 开源精神", "url": "https://github.com/dashboard", "iconSymbol": "ri-github-fill", "iconColor": "var(--text)" },
+        { "title": "Bilibili", "url": "https://www.bilibili.com/", "icon": "https://www.bilibili.com/favicon.ico" },
+        { "title": "YouTube", "url": "https://www.youtube.com/", "icon": "https://www.youtube.com/favicon.ico" },
+        { "title": "微信读书", "url": "https://weread.qq.com/web/shelf", "icon": "https://rescdn.qqmail.com/node/wr/wrpage/style/images/independent/favicon/favicon_48h.png" }
+      ]
+    },
+    {
+      "id": "tools",
+      "navTitle": "Tools",
+      "icon": "ri-tools-line",
+      "sectionTitle": "工欲善其事 必先利其器",
+      "titleColor": "#f59e0b",
+      "groups": [
+        {
+          "name": "⭐ Go-To Tools",
+          "isOpen": true,
+          "items": [
+            { "title": "FMHY", "url": "https://fmhy.net/", "icon": "https://www.google.com/s2/favicons?domain=fmhy.net&sz=64" },
+            { "title": "小豆子", "url": "https://www.doubao.com/chat/", "icon": "https://www.google.com/s2/favicons?domain=www.doubao.com&sz=64" },
+            { "title": "MIMO 翻译", "url": "https://aistudio.xiaomimimo.com/#/", "icon": "https://www.google.com/s2/favicons?domain=aistudio.xiaomimimo.com&sz=64" },
+            { "title": "Google翻译", "url": "https://translate.google.com/", "icon": "https://www.google.com/s2/favicons?domain=translate.google.com&sz=64" },
+            { "title": "Z-Library", "url": "https://zh.z-library.sk/", "icon": "https://www.google.com/s2/favicons?domain=zh.z-library.sk&sz=64" },
+            { "title": "樊登读书", "url": "https://www.dushu365.com/", "icon": "https://www.google.com/s2/favicons?domain=dushu365.com&sz=64" }
+          ]
+        },
+        {
+          "name": "🎨 设计与素材",
+          "isOpen": false,
+          "items": [
+            { "title": "WallHaven-壁纸", "url": "https://wallhaven.cc/", "icon": "https://wallhaven.cc/favicon.ico" },
+            { "title": "Unsplash-摄影", "url": "https://unsplash.com/", "icon": "https://unsplash.com/favicon.ico" },
+            { "title": "Icon-Alibaba", "url": "https://www.iconfont.cn/", "icon": "https://www.google.com/s2/favicons?domain=iconfont.cn&sz=64" },
+            { "title": "Icon-ByteDance", "url": "https://iconpark.oceanengine.com/", "icon": "https://www.google.com/s2/favicons?domain=iconpark.oceanengine.com&sz=64" },
+            { "title": "Flaticon", "url": "https://www.flaticon.com/", "icon": "https://www.google.com/s2/favicons?domain=flaticon.com&sz=64" }
+          ]
+        },
+        {
+          "name": "🧩 其他",
+          "isOpen": false,
+          "items": [
+            { "title": "Edge扩展商店", "url": "https://microsoftedge.microsoft.com/addons/Microsoft-Edge-Extensions-Home", "icon": "https://www.google.com/s2/favicons?domain=microsoftedge.microsoft.com&sz=64" },
+            { "title": "Chrome商店", "url": "https://chromewebstore.google.com/", "icon": "https://www.google.com/s2/favicons?domain=chromewebstore.google.com&sz=64" },
+            { "title": "Ping0-节点质量", "url": "https://ping0.cc/", "icon": "https://ping0.cc/favicon.ico" },
+            { "title": "Speedtest", "url": "https://www.speedtest.net/", "icon": "https://www.google.com/s2/favicons?domain=speedtest.net&sz=64" },
+            { "title": "GeoGebra计算器", "url": "https://www.geogebra.org/calculator", "icon": "https://www.google.com/s2/favicons?domain=geogebra.org&sz=64" },
+            { "title": "键鼠在线测试", "url": "https://www.mchose.com.cn/#/test-keyboard", "icon": "https://www.mchose.com.cn/mchose.ico" },
+            { "title": "SOC天梯图", "url": "https://socpk.com/", "icon": "https://www.google.com/s2/favicons?domain=socpk.com&sz=64" },
+            { "title": "小米驱动下载", "url": "https://www.mi.com/service/notebook/drivers", "icon": "https://www.google.com/s2/favicons?domain=mi.com&sz=64" },
+            { "title": "联想应用商店", "url": "https://lestore.lenovo.com/", "icon": "https://www.google.com/s2/favicons?domain=lestore.lenovo.com&sz=64" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cloud",
+      "navTitle": "API & Cloud",
+      "icon": "ri-cloud-line",
+      "sectionTitle": "API & 云",
+      "titleColor": "#06b6d4",
+      "items": [
+        { "title": "DeepSeek API", "url": "https://platform.deepseek.com/", "icon": "https://www.google.com/s2/favicons?domain=platform.deepseek.com&sz=64" },
+        { "title": "火山引擎", "url": "https://www.volcengine.com/", "icon": "https://www.google.com/s2/favicons?domain=www.volcengine.com&sz=64" },
+        { "title": "阿里百炼", "url": "https://bailian.console.aliyun.com/", "iconSymbol": "ri-cloud-line", "iconColor": "white", "iconBg": "#ff6a00" },
+        { "title": "Cherry AI", "url": "https://open.cherryin.ai/pricing", "icon": "https://www.google.com/s2/favicons?domain=open.cherryin.ai&sz=64" },
+        { "title": "SiliconFlow", "url": "https://siliconflow.cn/", "icon": "https://siliconflow.cn/favicon.ico" },
+        { "title": "Cloudflare", "url": "https://dash.cloudflare.com/", "icon": "https://www.google.com/s2/favicons?domain=dash.cloudflare.com&sz=64" },
+        { "title": "阿里云", "url": "https://www.aliyun.com/", "icon": "https://img.alicdn.com/tfs/TB1_ZXuNcfpK1RjSZFOXXa6nFXa-32-32.ico" },
+        { "title": "腾讯云", "url": "https://www.tencentcloud.com/", "icon": "https://www.tencentcloud.com/favicon.ico" },
+        { "title": "Oracle", "url": "https://www.oracle.com/cloud/", "icon": "https://www.oracle.com/favicon.ico" },
+        { "title": "Google Cloud", "url": "https://cloud.google.com/", "icon": "https://cloud.google.com/favicon.ico" },
+        { "title": "Hero SMS", "url": "https://hero-sms.com/", "icon": "https://www.google.com/s2/favicons?domain=hero-sms.com&sz=64" }
+      ]
+    },
+    {
+      "id": "opensource",
+      "navTitle": "开发者与资源库",
+      "icon": "ri-open-source-line",
+      "sectionTitle": "资源库",
+      "titleColor": "#ec4899",
+      "items": [
+        { "title": "Hugging Face", "url": "https://huggingface.co/", "icon": "https://www.google.com/s2/favicons?domain=huggingface.co&sz=64" },
+        { "title": "Vultr", "url": "https://my.vultr.com/", "icon": "https://my.vultr.com/apple-touch-icon.png?v=1" },
+        { "title": "Gitee", "url": "https://gitee.com/explore", "icon": "https://gitee.com/favicon.ico" },
+        { "title": "Civitai", "url": "https://civitai.com/", "icon": "https://www.google.com/s2/favicons?domain=civitai.com&sz=64" },
+        { "title": "Debian 归档镜像站", "url": "https://cdimage.debian.org/mirror/cdimage/archive/", "icon": "https://www.google.com/s2/favicons?domain=debian.org&sz=64" }
+      ]
+    },
+    {
+      "id": "academic",
+      "navTitle": "学术与前沿",
+      "icon": "ri-graduation-cap-fill",
+      "sectionTitle": "学术与前沿",
+      "titleColor": "#2dd4bf",
+      "items": [
+        { "title": "MIT 科技评论", "url": "https://www.mittrchina.com/news", "icon": "https://www.google.com/s2/favicons?domain=mittrchina.com&sz=64" },
+        { "title": "Nature", "url": "https://www.nature.com/", "icon": "https://www.google.com/s2/favicons?domain=nature.com&sz=64" },
+        { "title": "Science", "url": "https://www.science.org/", "icon": "https://www.google.com/s2/favicons?domain=science.org&sz=64" },
+        { "title": "Cell", "url": "https://www.cell.com/", "icon": "https://www.google.com/s2/favicons?domain=cell.com&sz=64" },
+        { "title": "柳叶刀", "url": "https://www.thelancet.com/", "icon": "https://www.google.com/s2/favicons?domain=thelancet.com&sz=64" }
+      ]
+    },
+    {
+      "id": "life",
+      "navTitle": "娱乐与生活",
+      "icon": "ri-cup-line",
+      "sectionTitle": "娱乐与生活",
+      "titleColor": "#f43f5e",
+      "items": [
+        { "title": "TikTok", "url": "https://www.tiktok.com/explore", "icon": "https://www.tiktok.com/favicon.ico" },
+        { "title": "抖音", "url": "https://www.douyin.com/", "icon": "https://www.douyin.com/favicon.ico" },
+        { "title": "快手", "url": "https://www.kuaishou.com/new-reco", "icon": "https://www.kuaishou.com/favicon.ico" },
+        { "title": "京东", "url": "https://www.jd.com/", "icon": "https://www.google.com/s2/favicons?domain=jd.com&sz=64" },
+        { "title": "淘宝", "url": "https://www.taobao.com/", "icon": "https://www.google.com/s2/favicons?domain=taobao.com&sz=64" },
+        { "title": "BetterGI", "url": "https://bettergi.com/", "icon": "https://www.google.com/s2/favicons?domain=bettergi.com&sz=64" },
+        { "title": "BetterGI-腾讯频道", "url": "https://pd.qq.com/qqweb/qunpro/share?_wv=3&_wwv=128&appChannel=share&inviteCode=2knUxQTSdCl&businessType=9", "icon": "https://www.google.com/s2/favicons?domain=pd.qq.com&sz=64" },
+        { "title": "小米云服务", "url": "https://i.mi.com/", "icon": "https://www.google.com/s2/favicons?domain=i.mi.com&sz=64" },
+        { "title": "网易邮箱", "url": "https://mail.163.com/", "icon": "https://mail.163.com/favicon.ico" }
+      ]
+    }
+  ]
+}
