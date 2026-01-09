@@ -174,7 +174,25 @@
         { "title": "小米云服务", "url": "https://i.mi.com/", "icon": "https://www.google.com/s2/favicons?domain=i.mi.com&sz=64" },
         { "title": "网易邮箱", "url": "https://mail.163.com/", "icon": "https://mail.163.com/favicon.ico" }
       ]
+    },
+    {
+      "id": "roco",
+      "navTitle": "洛克王国",
+      "icon": "ri-gamepad-fill",
+      "sectionTitle": "洛克王国",
+      "titleColor": "#f43f5e",
+      "items": [
+        { "title": "悟空神辅", "url": "http://5kfz.com/", "icon": "https://www.google.com/s2/favicons?domain=5kfz.com&sz=64" },
+        { "title": "童心智能辅助", "url": "http://www.luoketx.com/", "icon": "http://luoketx.com/image/logo.jpg" },
+        { "title": "旋风辅助", "url": "https://www.luokexf.com/", "icon": "roco.png" },
+        { "title": "明曦微端", "url": "https://mxfz.pro/#/simple", "icon": "https://www.google.com/s2/favicons?domain=mxfz.pro&sz=64" },
+        { "title": "空灵微端", "url": "https://www.rocokl.me/", "icon": "https://ooo.0x0.ooo/2023/04/08/6sZ3b.png" },
+        { "title": "洛克王国官方登录页", "url": "https://17roco.qq.com/login.html", "icon": "https://www.google.com/s2/favicons?domain=17roco.qq.com&sz=64" },
+        { "title": "洛克王国H5版", "url": "https://17roco.qq.com/h5/", "icon": "https://www.google.com/s2/favicons?domain=17roco.qq.com&sz=64" },
+        { "title": "洛克王国官方论坛", "url": "https://17roco.gamebbs.qq.com/forum.php", "icon": "qq.png" }
+      ]
     }
+
   ]
 
 }
