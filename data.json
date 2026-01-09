@@ -183,7 +183,7 @@
       "titleColor": "#f43f5e",
       "items": [
         { "title": "悟空神辅", "url": "http://5kfz.com/", "icon": "https://www.google.com/s2/favicons?domain=5kfz.com&sz=64" },
-        { "title": "童心智能辅助", "url": "http://www.luoketx.com/", "icon": "http://luoketx.com/image/logo.jpg" },
+        { "title": "童心智能辅助", "url": "http://www.luoketx.com/", "icon": "tongxin.png" },
         { "title": "旋风辅助", "url": "https://www.luokexf.com/", "icon": "roco.png" },
         { "title": "明曦微端", "url": "https://mxfz.pro/#/simple", "icon": "https://www.google.com/s2/favicons?domain=mxfz.pro&sz=64" },
         { "title": "空灵微端", "url": "https://www.rocokl.me/", "icon": "https://ooo.0x0.ooo/2023/04/08/6sZ3b.png" },
@@ -196,3 +196,4 @@
   ]
 
 }
+
